@@ -7,7 +7,8 @@ import {
 import ListPage from "./routes/listPage/listPage";
 import SinglePage from "./routes/singlePage/singlePage";
 import Layout from "./routes/layout/layout";
-
+import Profile from "./routes/profile/profile";
+import Chat from "./components/chat/chat";
 
 function App() {
 
@@ -27,13 +28,17 @@ function App() {
         {
           path: ":id",
           element: <SinglePage />,
-        }
+        },
+        {
+          path: "/profile",
+          element: <Profile />,
+        },
+        {
+          path: "/chat",
+          element: <Chat />,
+        },
       ]
-    },
-    {
-      path: "/list",
-      element: <ListPage />,
-    },
+    }
   ]);
   return (
     // <div className="layout">

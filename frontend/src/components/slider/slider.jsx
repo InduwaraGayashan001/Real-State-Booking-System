@@ -31,7 +31,9 @@ function Slider({ images }) {
                     <div className="arrow">
                         <img src="/arrow.png" className='right' alt="" onClick={()=>changeSLide("right")} />
                     </div>
-                    <div className="close" onClick={()=>setImageIndex(null)}>X</div>
+                    <div className="close" onClick={() => setImageIndex(null)}>
+                        <img src="/close.png" alt="" />
+                    </div>
                 </div>
             )}
             <div className="bigImage">

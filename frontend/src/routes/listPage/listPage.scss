@@ -1,18 +1,32 @@
+@import "../../responsive.scss";
+
 .listPage{
     display: flex;
     height: 100% ;
+
+    @include md{
+        flex-direction: column;
+        overflow: scroll;
+    }
     
     .listContainer{
         flex: 3;
         height: 100%;
+        overflow-y: scroll;
+
+        @include md{
+            flex: none;
+            height: max-content;
+            margin-bottom: 50px;
+            overflow-y: hidden;
+        }
 
         .wrapper{
-            height: 100%;
             padding-right: 50px;
             display: flex;
             flex-direction: column;
             gap: 50px;
-            overflow-y: scroll;
+            
         }
     }
 
@@ -20,6 +34,18 @@
         flex: 2;
         background-color: #fcf5f3;
         height: 100%;
+        padding: 20px 0px;
+
+        @include md{
+            flex: none;
+            height: max-content;
+            margin-bottom: 50px;
+            overflow-y: hidden;
+            height: 100vh;
+            padding: 20px 20px;
+        }
+
+        
     }
     
 }
