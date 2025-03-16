@@ -1,7 +1,8 @@
-import axios from "axios";
 import "./registerPage.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import "../../lib/apiRequest.js";
+import apiRequest from "../../lib/apiRequest";
 
 function RegisterPage() {
     const [error, setError] = useState("");
@@ -17,7 +18,7 @@ function RegisterPage() {
         const password = formData.get("password");
         
         try {
-            const response = await axios.post("http://localhost:8800/api/auth/register", {
+            const response = await apiRequest.post("/auth/register", {
                 userName, email, password
             });
             navigate("/login");

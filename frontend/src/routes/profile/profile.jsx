@@ -1,14 +1,15 @@
 import './profile.scss';
 import List from '../../components/list/list';
 import Chat from '../../components/chat/chat';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import "../../lib/apiRequest.js";
+import apiRequest from '../../lib/apiRequest';
 
 function Profile() { 
     const navigate = useNavigate();
     const handleLogout = async () => {
         try {
-            const response = await axios.post("http://localhost:8800/api/auth/logout");
+            const response = await apiRequest.post("/auth/logout");
             localStorage.removeItem("user");
             navigate("/");
         }

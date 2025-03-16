@@ -1,7 +1,8 @@
 import "./loginPage.scss";
-import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import "../../lib/apiRequest.js"
+import apiRequest from "../../lib/apiRequest";
 
 function LoginPage() {
     const [error, setError] = useState("");
@@ -16,7 +17,7 @@ function LoginPage() {
         const password = formData.get("password");
         
         try {
-            const response = await axios.post("http://localhost:8800/api/auth/login", {
+            const response = await apiRequest.post("/auth/login", {
                 userName, password
             });
             localStorage.setItem("user", JSON.stringify(response.data));
