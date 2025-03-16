@@ -35,7 +35,7 @@ function Navbar() {
                 </div>):
                     (<>
                         <Link to="/">Sign In</Link>
-                        <Link to="/" className="register">
+                        <Link to="/register" className="register">
                             Sign Up
                         </Link>
                     </>)}
@@ -52,13 +52,13 @@ function Navbar() {
                     <Link to="/contact">Contact</Link>
                     <Link to="/agents">Agents</Link>
                     {user ? (
-                        <Link to="/profile" className="userProfile">
+                        <Link to="/profile" className="userProfileMenu">
                             Profile
                         </Link>
                     ) : (
                         <>
                             <Link to="/">Sign In</Link>
-                            <Link to="/" className="register">
+                            <Link to="/register" className="registerMenu">
                                 Sign Up
                             </Link>
                         </>

@@ -130,17 +130,13 @@ nav{
 
             .userProfile{
                 background-color: #fece51;
-                padding: 12px 24px;
-                cursor: pointer;
-                border:none;
-
                 
             }
         }
 
         .register{
             background-color: #f8b24f;
-        
+            cursor: pointer;
         }
         
         .menuIcon{
@@ -193,6 +189,12 @@ nav{
                     right: -8px;
                 }
             }
+
+            .registerMenu{
+                background-color: #f8b24f;
+                padding: 12px 24px;
+                cursor: pointer;
+            }
             
 
             &.active{
@@ -204,6 +206,8 @@ nav{
                     display: initial;
                 }
             }
+
+            
         }
     }
 }

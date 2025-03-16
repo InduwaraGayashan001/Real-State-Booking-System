@@ -9,6 +9,8 @@ import SinglePage from "./routes/singlePage/singlePage";
 import Layout from "./routes/layout/layout";
 import Profile from "./routes/profile/profile";
 import Chat from "./components/chat/chat";
+import RegisterPage from "./routes/register/registerPage";
+import LoginPage from "./routes/login/loginPage";
 
 function App() {
 
@@ -37,6 +39,14 @@ function App() {
           path: "/chat",
           element: <Chat />,
         },
+        {
+          path: "/register",
+          element: <RegisterPage />,
+        },
+        {
+          path: "/login",
+          element: <LoginPage />,
+        }
       ]
     }
   ]);
