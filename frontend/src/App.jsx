@@ -6,7 +6,7 @@ import {
 
 import ListPage from "./routes/listPage/listPage";
 import SinglePage from "./routes/singlePage/singlePage";
-import Layout from "./routes/layout/layout";
+import {Layout, RequireAuth } from "./routes/layout/layout";
 import Profile from "./routes/profile/profile";
 import Chat from "./components/chat/chat";
 import RegisterPage from "./routes/register/registerPage";
@@ -32,14 +32,6 @@ function App() {
           element: <SinglePage />,
         },
         {
-          path: "/profile",
-          element: <Profile />,
-        },
-        {
-          path: "/chat",
-          element: <Chat />,
-        },
-        {
           path: "/register",
           element: <RegisterPage />,
         },
@@ -48,6 +40,20 @@ function App() {
           element: <LoginPage />,
         }
       ]
+    },
+    {
+      path: "/",
+      element: <RequireAuth />,
+      children: [
+        {
+          path: "/profile",
+          element: <Profile />,
+        },
+        {
+          path: "/chat",
+          element: <Chat />,
+        },
+      ],
     }
   ]);
   return (

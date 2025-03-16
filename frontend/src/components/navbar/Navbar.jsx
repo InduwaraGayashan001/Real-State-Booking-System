@@ -1,12 +1,13 @@
 import "./navbar.scss";
-import { useState } from "react";
+import {useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
 
 function Navbar() {
     const [open, setOpen] = useState(false)
-    const user = true;
+    const { currentUser } = useContext(AuthContext);
+    
     return (
-        
         <nav>
             <div className="left">
                 <Link to="/" className="logo">
@@ -21,9 +22,9 @@ function Navbar() {
 
             </div>
             <div className="right">
-                {user ? (<div className="user">
-                    <img src= "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" />
-                    <span>John Doe</span>
+                {currentUser ? (<div className="user">
+                    <img src={currentUser.avatar || "/noavatar.jpg"} alt="" />
+                    <span>{currentUser.userName}</span>
 
                     <Link to="/chat" className="msg"><img src="/message.png" alt="" />
                         <div className="notification">3</div>
@@ -34,7 +35,7 @@ function Navbar() {
                     </Link>     
                 </div>):
                     (<>
-                        <Link to="/">Sign In</Link>
+                        <Link to="/login">Sign In</Link>
                         <Link to="/register" className="register">
                             Sign Up
                         </Link>
@@ -51,13 +52,13 @@ function Navbar() {
                     <Link to="/about">About</Link> 
                     <Link to="/contact">Contact</Link>
                     <Link to="/agents">Agents</Link>
-                    {user ? (
+                    {currentUser ? (
                         <Link to="/profile" className="userProfileMenu">
                             Profile
                         </Link>
                     ) : (
                         <>
-                            <Link to="/">Sign In</Link>
+                            <Link to="/login">Sign In</Link>
                             <Link to="/register" className="registerMenu">
                                 Sign Up
                             </Link>
