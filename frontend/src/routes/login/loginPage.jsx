@@ -36,7 +36,7 @@ function LoginPage() {
         <div className="loginPage">
             <div className="formContainer">
                 <form onSubmit={handleSubmit} >
-                    <h1>Welcome back</h1>
+                    <h1>Hi, Welcome Back!</h1>
                     <input name="userName" required minLength={3} maxLength={20} type="text" placeholder="Username" />
                     <input name="password" required minLength={8} type="password" placeholder="Password" />
                     <button disabled={isLoading}>Login</button>

@@ -11,6 +11,7 @@ import Profile from "./routes/profile/profile";
 import Chat from "./components/chat/chat";
 import RegisterPage from "./routes/register/registerPage";
 import LoginPage from "./routes/login/loginPage";
+import ProfileUpdatePage from "./routes/profileUpdatePage/profileUpdatePage";
 
 function App() {
 
@@ -48,6 +49,10 @@ function App() {
         {
           path: "/profile",
           element: <Profile />,
+        },
+        {
+          path: "/profile/update",
+          element: <ProfileUpdatePage />,
         },
         {
           path: "/chat",
