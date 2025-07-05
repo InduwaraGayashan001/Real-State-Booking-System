@@ -31,10 +31,14 @@ function Profile() {
                         </Link>
                     </div>
                     <div className="info">
-                        <span>Avatar : <img src={currentUser.avatar || "noavatar.jpg"} alt="" /></span>
-                        <span>User Name : <b>{currentUser.userName}</b></span>
-                        <span>E-mail : <b>{currentUser.email}</b></span>
-                        <button onClick={handleLogout}>Logout</button>
+                        <div className="avatar">
+                            <img src={currentUser.avatar || "noavatar.jpg"} alt="" />
+                        </div>
+                        <div className="userInfo">
+                            <span>User Name : <b>{currentUser.userName}</b></span>
+                            <span>E-mail : <b>{currentUser.email}</b></span>
+                            <button onClick={handleLogout}>Logout</button>
+                        </div>
                     </div>
                     <div className="title">
                         <h1>My List</h1>
