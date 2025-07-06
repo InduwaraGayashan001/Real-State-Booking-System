@@ -42,7 +42,9 @@ function Profile() {
                     </div>
                     <div className="title">
                         <h1>My List</h1>
-                        <button>Add New Product</button>
+                        <Link to="/add">
+                            <button>Add New Product</button>
+                        </Link>
                     </div>
                     <List />
                     <div className="title">

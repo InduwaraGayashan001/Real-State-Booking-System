@@ -12,6 +12,8 @@ import Chat from "./components/chat/chat";
 import RegisterPage from "./routes/register/registerPage";
 import LoginPage from "./routes/login/loginPage";
 import ProfileUpdatePage from "./routes/profileUpdatePage/profileUpdatePage";
+import NewPostPage from "./routes/newPostPage/newPostPage";
+import { singlePageLoader } from "./lib/loaders";
 
 function App() {
 
@@ -31,6 +33,7 @@ function App() {
         {
           path: ":id",
           element: <SinglePage />,
+          loader: singlePageLoader
         },
         {
           path: "/register",
@@ -58,6 +61,10 @@ function App() {
           path: "/chat",
           element: <Chat />,
         },
+        {
+          path: "/add",
+          element: <NewPostPage />,
+        }
       ],
     }
   ]);
