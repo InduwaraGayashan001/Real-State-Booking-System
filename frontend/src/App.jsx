@@ -8,12 +8,12 @@ import ListPage from "./routes/listPage/listPage";
 import SinglePage from "./routes/singlePage/singlePage";
 import {Layout, RequireAuth } from "./routes/layout/layout";
 import Profile from "./routes/profile/profile";
-import Chat from "./components/chat/chat";
+import Chat from "./components/chat/Chat";
 import RegisterPage from "./routes/register/registerPage";
 import LoginPage from "./routes/login/loginPage";
 import ProfileUpdatePage from "./routes/profileUpdatePage/profileUpdatePage";
 import NewPostPage from "./routes/newPostPage/newPostPage";
-import { singlePageLoader } from "./lib/loaders";
+import { singlePageLoader, listPageLoader, profilePageLoader } from "./lib/loaders";
 
 function App() {
 
@@ -29,6 +29,7 @@ function App() {
         {
           path: "/list",
           element: <ListPage />,
+          loader: listPageLoader,
         },
         {
           path: ":id",
@@ -52,6 +53,7 @@ function App() {
         {
           path: "/profile",
           element: <Profile />,
+          loader: profilePageLoader
         },
         {
           path: "/profile/update",
